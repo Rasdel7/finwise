@@ -15,8 +15,7 @@ getDB();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://finwise-4qpu.onrender.com',
-    'https://finwise.vercel.app'  // update this once Vercel gives you the real URL
+    'https://finwise-blond.vercel.app'
   ],
   credentials: true
 }));
