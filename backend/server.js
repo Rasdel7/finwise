@@ -13,9 +13,11 @@ getDB();
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? ['https://your-frontend-domain.vercel.app']
-    : ['http://localhost:3000', 'http://localhost:5173'],
+  origin: [
+    'http://localhost:3000',
+    'https://finwise-4qpu.onrender.com',
+    'https://finwise.vercel.app'  // update this once Vercel gives you the real URL
+  ],
   credentials: true
 }));
 
