@@ -4,7 +4,7 @@ import api from '../utils/api';
 import toast from 'react-hot-toast';
 
 const CATEGORIES = ['Food','Transport','Entertainment','Shopping','Health','Bills','Salary','Freelance','Investment','Other'];
-const fmt = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n);
+const fmt = (n) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(n);
 
 const emptyForm = { title: '', amount: '', type: 'expense', category: 'Food', date: new Date().toISOString().split('T')[0], note: '' };
 
@@ -114,7 +114,7 @@ export default function Transactions() {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs text-slate-400 mb-1 block">Amount ($)</label>
+                  <label className="text-xs text-slate-400 mb-1 block">Amount (₹)</label>
                   <input type="number" step="0.01" min="0" className="input-field" placeholder="0.00" value={form.amount} onChange={e => setForm({...form, amount: e.target.value})} required />
                 </div>
                 <div>

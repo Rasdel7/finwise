@@ -9,8 +9,6 @@ const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/transactions', icon: ArrowLeftRight, label: 'Transactions' },
   { to: '/goals', icon: Target, label: 'Goals' },
-  { to: '/market', icon: TrendingUp, label: 'Markets' },
-  { to: '/insights', icon: Sparkles, label: 'AI Insights' },
 ];
 
 export default function Sidebar() {

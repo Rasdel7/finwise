@@ -6,8 +6,7 @@ import AuthPage from './pages/AuthPage';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
 import Goals from './pages/Goals';
-import Markets from './pages/Markets';
-import Insights from './pages/Insights';
+import Goals from './pages/Goals';
 import './index.css';
 
 function ProtectedLayout() {
@@ -21,8 +20,6 @@ function ProtectedLayout() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/goals" element={<Goals />} />
-          <Route path="/market" element={<Markets />} />
-          <Route path="/insights" element={<Insights />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </main>

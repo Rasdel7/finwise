@@ -8,7 +8,7 @@ import { format } from 'date-fns';
 
 const COLORS = ['#6c63ff', '#00d4aa', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'];
 
-const fmt = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
+const fmt = (n) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n);
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -177,17 +177,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* AI Prompt */}
-      <Link to="/insights" className="mt-6 flex items-center gap-4 p-5 rounded-2xl border border-accent-primary/20 bg-accent-primary/5 hover:bg-accent-primary/10 transition-all group block">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary to-accent-secondary flex items-center justify-center">
-          <Sparkles size={18} className="text-white" />
-        </div>
-        <div className="flex-1">
-          <p className="font-semibold text-white">Get AI-powered financial insights</p>
-          <p className="text-sm text-slate-400">Claude analyzes your spending and gives personalized advice</p>
-        </div>
-        <ArrowRight size={20} className="text-accent-primary group-hover:translate-x-1 transition-transform" />
-      </Link>
     </div>
   );
 }

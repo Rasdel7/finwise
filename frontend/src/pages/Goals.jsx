@@ -4,7 +4,7 @@ import api from '../utils/api';
 import toast from 'react-hot-toast';
 
 const COLORS = ['#6c63ff','#00d4aa','#f59e0b','#ef4444','#8b5cf6','#06b6d4','#ec4899'];
-const fmt = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
+const fmt = (n) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n);
 const emptyForm = { title: '', target_amount: '', current_amount: '', deadline: '', color: '#6c63ff' };
 
 export default function Goals() {
@@ -64,11 +64,11 @@ export default function Goals() {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs text-slate-400 mb-1 block">Target Amount ($)</label>
+                  <label className="text-xs text-slate-400 mb-1 block">Target Amount (₹)</label>
                   <input type="number" min="1" className="input-field" placeholder="10000" value={form.target_amount} onChange={e => setForm({...form, target_amount: e.target.value})} required />
                 </div>
                 <div>
-                  <label className="text-xs text-slate-400 mb-1 block">Current Savings ($)</label>
+                  <label className="text-xs text-slate-400 mb-1 block">Current Savings (₹)</label>
                   <input type="number" min="0" className="input-field" placeholder="0" value={form.current_amount} onChange={e => setForm({...form, current_amount: e.target.value})} />
                 </div>
               </div>

@@ -23,7 +23,7 @@ async function register(req, res) {
     }
 
     const db = getDB();
-    const existing = db.prepare('SELECT id FROM users WHERE email = ?').get(email);
+    const existing = db.prepare('SELECT id FROM users WHERE email = ?').get(email.toLowerCase());
     if (existing) {
       return res.status(409).json({ error: 'Email already registered.' });
     }
@@ -92,7 +92,7 @@ function updateProfile(req, res) {
     const { name, currency, monthly_budget } = req.body;
     const db = getDB();
     db.prepare('UPDATE users SET name = ?, currency = ?, monthly_budget = ? WHERE id = ?')
-      .run(name, currency || 'USD', monthly_budget || 0, req.user.id);
+      .run(name, currency || 'INR', monthly_budget || 0, req.user.id);
     const user = db.prepare('SELECT id, name, email, currency, monthly_budget, created_at FROM users WHERE id = ?').get(req.user.id);
     res.json(user);
   } catch (err) {
