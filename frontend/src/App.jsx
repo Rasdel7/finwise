@@ -6,7 +6,6 @@ import AuthPage from './pages/AuthPage';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
 import Goals from './pages/Goals';
-import Goals from './pages/Goals';
 import './index.css';
 
 function ProtectedLayout() {
